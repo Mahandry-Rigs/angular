@@ -7,11 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProduitComponent implements OnInit {
 
+
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }
 
-// Eto ve no asiana anaz
