@@ -1,8 +1,43 @@
-<div>
-       <ul>
-            <li>{{produit.id}}</li>
-            <li>{{produit.nom}}</li>
-            <li>{{produit.prix}}</li>
-       </ul>
+
+
+<div class="container"> 
+  <div class="row">
+    <div class="col-md-4 bg-danger">
+      <div>
+          <table class="table table-sm">
+               <thead>
+                    <tr>
+                         <th> Les Produits </th>
+                         <th>
+                              <button class="btn btn-sm btn-outline-dark"> <i class="fa fa-plus-circle" aria-hidden="true"></i></button> 
+                         </th>
+
+                    </tr>
+               </thead>
+
+               <tbody>
+                    <tr *ngFor="let prod of produits" (click)="selectProduit(prod)" >
+                         <td>  {{ prod.nom }} </td>
+                         <td>  <button class="btn btn-sm btn-outline-dark"> <i class="fa fa-eye" aria-hidden="true"></i></button>  </td>
+                    </tr>
+               </tbody>
+          </table>        
+      </div>
+    </div>
+
+    
+    <div class="col-md-4 bg-warning">
+      <b>  Detail du produit : </b>
+      <div *ngIf="produitSelected">
+        <ul>
+          <li> ID: {{ produitSelected.id }} </li>
+          <li> Nom : {{ produitSelected.nom }} </li>
+          <li> Prix: {{ produitSelected.prix }} Ar </li>
+        </ul>
+      </div>
+    </div>
+
   </div>
-  
+</div>
+
+
